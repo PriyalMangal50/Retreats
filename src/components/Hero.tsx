@@ -37,39 +37,23 @@ export default function Hero({ titleOverride, subtitleOverride, showBadge = true
           </div>
         )}
 
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
           {titleOverride ? (
             titleOverride
           ) : (
             <>
               <span
-                style={{
-                  fontFamily: 'Cormorant, serif',
-                  fontWeight: 600,
-                  fontStyle: 'italic',
-                  fontSize: '80px',
-                  lineHeight: '68px',
-                  letterSpacing: '-3%',
-                  textAlign: 'center',
-                  textTransform: 'capitalize',
-                  display: 'inline-block'
-                }}
+                className="inline-block italic font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-[80px] leading-tight"
+                style={{ fontFamily: 'Cormorant, serif', textTransform: 'capitalize', letterSpacing: '-0.03em' }}
               >
                 Retreats
               </span>{' '}
-              that Renew<br />Teams that{' '}
+              <span className="hidden sm:inline">that Renew</span>
+              <br className="sm:hidden" />
+              <span className="block sm:inline">Teams that{' '}</span>
               <span
-                style={{
-                  fontFamily: 'Cormorant, serif',
-                  fontWeight: 600,
-                  fontStyle: 'italic',
-                  fontSize: '80px',
-                  lineHeight: '68px',
-                  letterSpacing: '-3%',
-                  textAlign: 'center',
-                  textTransform: 'capitalize',
-                  display: 'inline-block'
-                }}
+                className="inline-block italic font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-[80px] leading-tight"
+                style={{ fontFamily: 'Cormorant, serif', textTransform: 'capitalize', letterSpacing: '-0.03em' }}
               >
                 Thrive
               </span>
@@ -77,15 +61,8 @@ export default function Hero({ titleOverride, subtitleOverride, showBadge = true
           )}
         </h1>
 
-        <p className="text-white/90 mb-10 max-w-2xl mx-auto" style={{
-          fontFamily: 'Lato, sans-serif',
-          fontWeight: 700,
-          fontSize: '18px',
-          lineHeight: '24px',
-          textAlign: 'center'
-        }}>
+        <p className="text-white/90 mb-10 max-w-2xl mx-auto text-sm md:text-base font-semibold text-center" style={{ fontFamily: 'Lato, sans-serif' }}>
           {subtitleOverride ? subtitleOverride : 'Immersive wellness, inspiring corporate offsites, community journeys, and MICE experiences—crafted by Retreats by Traveon.'}
-
         </p>
 
         <button
