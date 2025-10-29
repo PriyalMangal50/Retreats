@@ -185,6 +185,8 @@ export default function CorporateRetreats() {
       <Why />
       <ImageCTA />
       
+      <Testimonials />
+      
       {/* Our Approach — 4 step process grid */}
       <section className="w-full bg-white py-16">
         <div className="max-w-7xl mx-auto px-8 text-center">
@@ -257,7 +259,6 @@ export default function CorporateRetreats() {
           </div>
         </div>
       </section>
-      <Testimonials />
       <FAQ />
       <Latest />
       <Subscribe />
