@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react';
 import SharedBackground from '../components/SharedBackground';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import { Link } from 'react-router-dom';
 import TrustedBy from '../components/TrustedBy';
 import Features from '../components/Features';
 import Programs from '../components/Programs';
@@ -359,7 +360,7 @@ export default function CommunityTours() {
                   <div className="p-4 pt-0">
                     <div className="flex gap-3">
                       <button className="flex-1 bg-gray-200 text-black py-2 rounded">View Details</button>
-                      <button className="flex-1 bg-black text-white py-2 rounded">Enquire Now</button>
+                      <Link to="/enquire" className="flex-1 bg-black text-white py-2 rounded text-center">Enquire Now</Link>
                     </div>
                   </div>
                 </div>

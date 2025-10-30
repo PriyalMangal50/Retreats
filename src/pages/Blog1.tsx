@@ -1,7 +1,6 @@
 import Navbar from '../components/Navbar';
 import Subscribe from '../components/Subscribe';
 import Footer from '../components/Footer';
-import FAQ from '../components/FAQ';
 import image33 from '../assets/images/image33.png';
 import image30 from '../assets/images/image30.png';
 

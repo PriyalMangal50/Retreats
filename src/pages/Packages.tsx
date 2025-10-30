@@ -1,5 +1,3 @@
-import React from 'react';
-import SharedBackground from '../components/SharedBackground';
 import Navbar from '../components/Navbar';
 import Subscribe from '../components/Subscribe';
 import Footer from '../components/Footer';
