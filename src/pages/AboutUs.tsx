@@ -13,6 +13,8 @@ import Subscribe from '../components/Subscribe';
 import Footer from '../components/Footer';
 import { images } from '../assets';
 import program23 from '../assets/images/program23.png';
+import program24 from '../assets/images/program24.png';
+import image21 from '../assets/images/image21.png';
 
 export default function AboutUs() {
   const arcImages = [
@@ -198,22 +200,22 @@ export default function AboutUs() {
           <img src={program23} alt="program background" className="w-full h-auto object-contain block" />
 
           {/* overlay text positioned slightly upward over the image; includes the three paragraphs below the heading */}
-          <div className="absolute inset-0 flex items-start justify-center" style={{ top: '6%' }}>
-            <div className="text-center px-6 max-w-3xl">
+          <div className="absolute inset-0 flex items-start justify-center" style={{ top: '18%' }}>
+            <div className="text-center px-6 max-w-2xl mx-auto">
               <h3 style={{ fontFamily: 'Cormorant, serif', fontSize: '40px', color: '#fff', fontStyle: 'italic', fontWeight: 700, textShadow: '0 2px 10px rgba(0,0,0,0.6)' }}>
                 —— Who We Are ——
               </h3>
 
               <div style={{ marginTop: 18, color: '#F8FAFC', textShadow: '0 1px 6px rgba(0,0,0,0.6)' }}>
-                <p style={{ fontFamily: 'Archivo, serif', fontWeight: 400, fontSize: '18px', lineHeight: '24px', letterSpacing: '-4%' }}>
+                <p className="text-base md:text-lg leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400, letterSpacing: '-4%' }}>
                   Born from a vision of weaving wellness, adventure, and purpose into everyday living, Traveon is more than a retreat planner — we’re architects of transformation.
                 </p>
 
-                <p style={{ marginTop: 12, fontFamily: 'Archivo, serif', fontWeight: 400, fontSize: '18px', lineHeight: '24px', letterSpacing: '-4%' }}>
+                <p className="mt-6 text-base md:text-lg leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400, letterSpacing: '-4%' }}>
                   We draw inspiration from alchemy of ancient wisdom and modern wellness science. From meditation practices taught by elders, to evidence-backed techniques for mental clarity, every facet of our retreats is crafted with deep intention.
                 </p>
 
-                <p style={{ marginTop: 12, fontFamily: 'Archivo, serif', fontWeight: 400, fontSize: '18px', lineHeight: '24px', letterSpacing: '-4%' }}>
+                <p className="mt-6 text-base md:text-lg leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400, letterSpacing: '-4%' }}>
                   We are guides, facilitators, companions — walking alongside those who come to us carrying stress, burnout, or simply a longing for more meaning. And when they leave, we hope they carry away calm, clarity, and a renewed sense of possibility.
                 </p>
               </div>
@@ -224,15 +226,90 @@ export default function AboutUs() {
 
       
 
+      {/* "How it Started" section using program24.png */}
+      <section className="w-full">
+        <div className="relative w-full">
+          <img src={program24} alt="program24 background" className="w-full h-auto object-contain block" />
+
+          <div className="absolute inset-0 flex items-start justify-center" style={{ top: '18%' }}>
+            <div className="text-center px-6 max-w-2xl mx-auto">
+              <h3 style={{ fontFamily: 'Cormorant, serif', fontSize: '40px', color: '#000', fontStyle: 'italic', fontWeight: 700 }}>
+                —— How it <span className="bg-gradient-to-r from-teal-400 via-cyan-500 to-purple-500 bg-clip-text text-transparent">Started</span> ——
+              </h3>
+
+              <div style={{ marginTop: 18, color: '#000' }}>
+                <p className="text-base md:text-lg leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400, letterSpacing: '-4%' }}>
+                  The world keeps moving fast. Deadlines, targets, notifications — the noise often drowns out what matters most. We started Retreats by Traveon because we saw how much people longed for stillness, for real connections, for a chance to rest and remember who they are… beyond their roles, beyond their to-do lists.
+                </p>
+
+                <p className="mt-6 text-base md:text-lg leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400, letterSpacing: '-4%' }}>
+                  Our founders spent years exploring wellness modalities — retreats, silent walks, breath work, group sharing circles, mindfulness practices, nature immersion — learning from guides, healers, coaches, and communities.
+                </p>
+
+                <p className="mt-6 text-base md:text-lg leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400, letterSpacing: '-4%' }}>
+                  What emerged was a clear truth: profound transformation isn’t a luxury. It’s a necessity. So, we built this space — retreats that go beyond luxury or escape — experiences that invite awakening, belonging, and growth.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Home page sections so About Us mirrors home initially */}
-      <TrustedBy />
-      <Features />
-      <Programs />
-      <Why />
-      <ImageCTA />
-      <Testimonials />
-      <FAQ />
-      <Latest />
+      {/* New white-background section with full-width image21 and overlayed heading + CTA */}
+      <section className="w-full bg-white">
+        <div className="relative w-full">
+          <img src={image21} alt="image21" className="w-full h-auto object-cover block" />
+
+          {/* Overlay: heading on the image and a gradient CTA button below it */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-center px-6 max-w-4xl mx-auto">
+              <h2 className="mx-auto" style={{ textAlign: 'center', textShadow: '0 4px 18px rgba(0,0,0,0.6)' }}>
+                <span style={{
+                  display: 'block',
+                  fontFamily: 'Lato, sans-serif',
+                  fontWeight: 700,
+                  fontStyle: 'normal',
+                  fontSize: '32px',
+                  lineHeight: '36px',
+                  letterSpacing: '-2%',
+                  color: '#ffffff'
+                }}>
+                  Creating a legacy of
+                </span>
+
+                <span style={{
+                  display: 'block',
+                  fontFamily: 'Cormorant Infant, serif',
+                  fontWeight: 600,
+                  fontStyle: 'italic',
+                  fontSize: '42px',
+                  lineHeight: '36px',
+                  letterSpacing: '-2%',
+                  color: '#ffffff',
+                  textTransform: 'capitalize'
+                }}>
+                  happiness, wellness &amp; belongingness
+                </span>
+              </h2>
+
+              <div className="mt-6">
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-3 px-6 py-3 rounded-full text-white bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:opacity-95 focus:outline-none"
+                  aria-label="Primary CTA"
+                >
+                  <span style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700 }}>CTA's</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                    <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Subscribe />
 
       <Footer />
