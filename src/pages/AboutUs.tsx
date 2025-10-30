@@ -1,5 +1,15 @@
 import SharedBackground from '../components/SharedBackground';
 import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import TrustedBy from '../components/TrustedBy';
+import Features from '../components/Features';
+import Programs from '../components/Programs';
+import Why from '../components/Why';
+import ImageCTA from '../components/ImageCTA';
+import Testimonials from '../components/Testimonials';
+import FAQ from '../components/FAQ';
+import Latest from '../components/Latest';
+import Subscribe from '../components/Subscribe';
 import Footer from '../components/Footer';
 import { images } from '../assets';
 
@@ -17,37 +27,105 @@ export default function AboutUs() {
       <SharedBackground />
       <Navbar />
 
-      {/* Top hero with About Us button */}
-      <section className="w-full py-20 bg-[#00282A] text-white">
+      {/* Use the shared site Hero so About page matches Home, but replace the badge text with "About Us" */}
+      <section className="w-full">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          {/* Button (curved with gradient corner) */}
-          <div className="flex justify-center mb-6">
-            <a href="/about" className="relative inline-flex items-center px-6 py-2 rounded-full" style={{ background: '#00282A' }}>
-              <span style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, color: '#fff' }}>About Us</span>
-              {/* gradient corner square */}
-              <span aria-hidden className="absolute -right-2 -top-2 w-6 h-6 rounded-full" style={{ background: 'linear-gradient(91.87deg, #00C5C5 0%, #009F26 100%)' }} />
-            </a>
+          {/* Custom badge to replace Hero's default badge */}
+          <div className="inline-block mb-2 relative mt-20">
+            <div
+              style={{
+                background: 'linear-gradient(91.87deg, #35F1F1 0%, #94F81A 50.48%, #00FF3C 100%)',
+                padding: '3px',
+                borderRadius: '9999px',
+                display: 'inline-block'
+              }}
+            >
+              <div
+                style={{
+                  background: 'linear-gradient(90deg, #00282A 0%, #033520 100%)',
+                  borderRadius: '9999px',
+                  padding: '8px 16px'
+                }}
+              >
+                <span className="text-white font-medium">About Us</span>
+              </div>
+            </div>
           </div>
-
-          <h1 className="mx-auto max-w-3xl text-center">
-            <span style={{
-              fontFamily: 'Cormorant, serif',
-              fontWeight: 700,
-              fontStyle: 'italic',
-              fontSize: '50px',
-              lineHeight: '48px',
-              letterSpacing: '-5%',
-              textTransform: 'capitalize',
-              display: 'block'
-            }}>Traveon</span>
-
-            <span className="block mt-2" style={{ fontFamily: 'Lato, sans-serif', fontWeight: 600, fontSize: '20px', color: '#fff' }}>— Your Pathway to Growth &amp; Connection</span>
-          </h1>
-
-          <p className="mx-auto mt-6 max-w-2xl text-center text-white" style={{ fontFamily: 'Archivo, serif', fontWeight: 400, fontSize: 18, lineHeight: '24px', letterSpacing: '-4%' }}>
-            At Retreats by Traveon, we believe life’s richest changes come when we pause, breathe, and reconnect — with ourselves, each other, and nature.
-          </p>
         </div>
+
+        {/* Render the shared Hero but hide its internal badge and provide custom title/subtitle */}
+          <div className="about-hero">
+            <style>{`.about-hero .inline-flex.items-center.gap-3{display:none !important} .about-hero .absolute.bottom-0{display:none !important}`}</style>
+            <Hero
+            showBadge={false}
+            titleOverride={(
+              <span style={{ display: 'inline-block', marginTop: '-48px' }}>
+              <span style={{
+                fontFamily: 'Cormorant, serif',
+                fontWeight: 700,
+                fontStyle: 'italic',
+                fontSize: '50px',
+                lineHeight: '48px',
+                letterSpacing: '-5%',
+                textTransform: 'capitalize',
+                display: 'inline-block',
+                textAlign: 'center'
+              }}>
+                Traveon
+              </span>
+
+              <span style={{ width: 8, display: 'inline-block' }} />
+
+              <span style={{
+                fontFamily: 'Lato, sans-serif',
+                fontWeight: 700,
+                fontStyle: 'normal',
+                fontSize: '36px',
+                lineHeight: '48px',
+                letterSpacing: '-2%',
+                display: 'inline-block'
+              }}>
+                — Your Pathway to Growth &amp; Connection
+              </span>
+            </span>
+          )}
+          subtitleOverride={(
+            <span style={{
+              fontFamily: 'Archivo, serif',
+              fontWeight: 400,
+              fontStyle: 'normal',
+              fontSize: '18px',
+              lineHeight: '24px',
+              letterSpacing: '-4%',
+              display: 'block',
+              marginTop: '-20px',
+              textAlign: 'center',
+              maxWidth: '680px',
+              margin: '0 auto',
+              color: '#ffffff'
+            }}>
+              At Retreats by Traveon, we believe life’s richest changes come when we pause, breathe, and reconnect — with ourselves, each other, and nature.
+            </span>
+          )}
+            />
+
+            {/* Replace the Hero's wavy divider with a gentler curve on the About page only */}
+            <div className="w-full">
+              <svg
+                viewBox="0 0 1440 120"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-full h-auto"
+                preserveAspectRatio="none"
+              >
+                {/* Single smooth arc to separate the hero from the next section */}
+                <path
+                  d="M0 40 C360 100 1080 100 1440 40 L1440 120 L0 120 Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </div>
       </section>
 
       {/* Where connection meets purpose — rotating arc of images */}
@@ -76,6 +154,17 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
+
+      {/* Home page sections so About Us mirrors home initially */}
+      <TrustedBy />
+      <Features />
+      <Programs />
+      <Why />
+      <ImageCTA />
+      <Testimonials />
+      <FAQ />
+      <Latest />
+      <Subscribe />
 
       <Footer />
     </div>
