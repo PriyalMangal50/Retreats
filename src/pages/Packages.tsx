@@ -5,6 +5,7 @@ import Subscribe from '../components/Subscribe';
 import Footer from '../components/Footer';
 import FAQ from '../components/FAQ';
 import program13 from '../assets/images/program13.png';
+import image33 from '../assets/images/image33.png';
 
 export default function Packages() {
   const itinerary = [
@@ -110,6 +111,21 @@ export default function Packages() {
             {/* Right column */}
             <aside className="lg:col-span-1">
               <div className="bg-gray-50 p-6 rounded-lg sticky top-28">
+                {/* overlapping image card: half sits in hero (above) and half in this details area */}
+                <div className="absolute left-1/2 -translate-x-1/2 -top-40 md:-top-48 lg:-top-56 z-40">
+                    <div className="relative">
+                      <img src={image33} alt="package highlight" className="h-64 md:h-80 lg:h-96 w-auto max-w-none rounded-xl shadow-2xl" />
+
+                        {/* bottom overlay with title, button and price */}
+                        <div className="absolute left-0 right-0 bottom-0 text-white px-4 py-3 rounded-b-xl flex flex-col">
+                          <div className="text-sm md:text-base font-semibold">Magical Muscat (5D/4N)</div>
+                          <div className="mt-3 flex items-center justify-between gap-4">
+                            <button className="bg-black text-white text-sm px-3 py-1 rounded">Book Now</button>
+                            <div className="text-sm">Starting @ <span className="font-semibold">₹39,999/person</span></div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
                 <h4 className="font-semibold">Quick Details</h4>
                 <ul className="mt-4 text-gray-700">
                   <li><strong>Duration:</strong> 5 days</li>
