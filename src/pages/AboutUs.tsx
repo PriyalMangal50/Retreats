@@ -15,6 +15,11 @@ import { images } from '../assets';
 import program23 from '../assets/images/program23.png';
 import program24 from '../assets/images/program24.png';
 import image21 from '../assets/images/image21.png';
+import image23 from '../assets/images/image23.png';
+import image24 from '../assets/images/image24.png';
+import team1 from '../assets/images/image30.png';
+import team2 from '../assets/images/image30.png';
+import image31 from '../assets/images/image31.png';
 
 export default function AboutUs() {
   const arcImages = [
@@ -307,6 +312,130 @@ export default function AboutUs() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Duplicate of 'Who We Are' section but using image23.png as the background */}
+      <section className="w-full">
+        <div className="relative w-full">
+          <img src={image23} alt="image23 background" className="w-full h-auto object-contain block" />
+
+          {/* Our Mission overlay (responsive: shifts down/right on md+) */}
+          <div className="absolute top-8 left-4 md:top-14 md:left-16 lg:top-20 lg:left-20">
+            <div className="max-w-xs md:max-w-xl text-left">
+              <h3 className="bg-gradient-to-r from-teal-400 via-cyan-500 to-purple-500 bg-clip-text text-transparent text-2xl md:text-[42px] italic" style={{ fontFamily: 'Cormorant, serif', fontWeight: 700, lineHeight: '42px', letterSpacing: '-5%', textAlign: 'center' }}>
+                Our Mission ——
+              </h3>
+
+              <div className="mt-3 md:mt-4 text-black">
+                <p className="text-sm md:text-base leading-6 md:leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400 }}>
+                  To craft soulful retreats that blend ancient wisdom + modern science, deliver heartfelt experiences, and ignite transformation — for people and teams alike.
+                </p>
+
+
+                <p className="mt-3 text-sm md:text-base leading-6 md:leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400 }}>
+                  To be a trusted partner in the journey toward well-being, purpose, and conscious living.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Our Vision overlay (responsive: shifts up/left on md+) */}
+          <div className="absolute bottom-8 right-4 md:bottom-14 md:right-12 lg:bottom-20 lg:right-20">
+            <div className="max-w-xs md:max-w-xl text-left">
+              <h3 className="bg-gradient-to-r from-teal-400 via-cyan-500 to-purple-500 bg-clip-text text-transparent text-2xl md:text-[42px] italic" style={{ fontFamily: 'Cormorant, serif', fontWeight: 700, lineHeight: '42px', letterSpacing: '-5%', textAlign: 'left' }}>
+                Our Vision ——
+              </h3>
+
+              <div className="mt-3 md:mt-4 text-black">
+                <p className="text-sm md:text-base leading-6 md:leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400, textAlign: 'left' }}>
+                  To craft soulful retreats that blend ancient wisdom + modern science, deliver heartfelt experiences, and ignite transformation — for people and teams alike.
+                </p>
+
+                <p className="mt-3 text-sm md:text-base leading-6 md:leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400, textAlign: 'left' }}>
+                  To be a trusted partner in the journey toward well-being, purpose, and conscious living.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Meet Our Team section (image24 background) */}
+      <section className="w-full bg-black">
+        <div className="relative w-full z-0">
+          <img src={image24} alt="team background" className="w-full h-auto object-cover block" />
+
+          <div className="absolute inset-0 flex items-start justify-center z-10">
+            <div className="text-center px-6 pt-16 max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-semibold text-white" style={{ fontFamily: 'Cormorant, serif' }}>
+                Meet Our Team
+              </h2>
+
+              <p className="mt-4 text-white/90 text-sm md:text-base" style={{ fontFamily: 'Lato, sans-serif' }}>
+                Traveon Ventures is guided by a leadership team that brings together complementary expertise in global travel, destination management, and event organization. This multidisciplinary leadership approach ensures that the company combines operational excellence with strategic vision and content expertise.
+              </p>
+
+              {/* Team grid: two profiles */}
+              <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                {/* Profile 1: image left, content right on md+ */}
+                <div className="flex w-full flex-col md:flex-row md:justify-between items-center md:items-center gap-4">
+                  <img src={team1} alt="team member 1" className="w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 object-cover rounded-lg md:-ml-8" />
+                  <div className="text-left md:flex-1 md:pl-6">
+                    <h4 className="text-lg md:text-xl font-semibold text-white" style={{ fontFamily: 'Lato, sans-serif' }}>Dr. Piyush Bhardwaj</h4>
+                    <p className="mt-2 text-sm md:text-base text-white/90" style={{ fontFamily: 'Archivo, serif' }}>With 15 years of experience in technology, data science, academic research, he brings in-depth expertise in building data-driven engagement platforms .</p>
+                  </div>
+                </div>
+
+                {/* Profile 2: image right, content left on md+ */}
+                <div className="flex w-full flex-col md:flex-row md:justify-between items-center md:items-center gap-4">
+                  <img src={team2} alt="team member 2" className="w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 object-cover rounded-lg md:-mr-16" />
+                  <div className="text-left md:flex-1 md:pl-16 lg:pl-20">
+                    <h4 className="text-lg md:text-xl font-semibold text-white" style={{ fontFamily: 'Lato, sans-serif' }}>Mr Abhineet Gupta</h4>
+                    <p className="mt-2 text-sm md:text-base text-white/90" style={{ fontFamily: 'Archivo, serif' }}>A seasoned business strategist with 14 years of diverse experience in travel and hospitality industries leading global companies like OYO & Trip.com</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Thin centered white line (not touching edges) */}
+              <div className="mt-8 flex justify-center">
+                <div className="w-11/12 sm:w-3/4 md:w-2/3 lg:w-1/2 border-t border-white/60" />
+              </div>
+
+              {/* Six image cards (3 per row on md+) with text to the right */}
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {[
+                  { img: team1, name: 'Dr. Piyush Bhardwaj', role: 'Sales Head' },
+                  { img: team1, name: 'Dr. Piyush Bhardwaj', role: 'Director of Experiences' },
+                  { img: team1, name: 'Dr. Piyush Bhardwaj', role: 'Program Lead' },
+                  { img: team1, name: 'Dr. Piyush Bhardwaj', role: 'Community Manager' },
+                  { img: team1, name: 'Dr. Piyush Bhardwaj', role: 'Operations Head' },
+                  { img: team1, name: 'Dr. Piyush Bhardwaj', role: 'Experience Designer' },
+                ].map((card, idx) => (
+                  <div key={idx} className="flex items-center gap-4 bg-transparent p-2">
+                    <img src={card.img} alt={`card-${idx}`} className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-md" />
+                    <div>
+                      <h5 className="text-white font-semibold" style={{ fontFamily: 'Lato, sans-serif' }}>{card.name}</h5>
+                      <p className="text-white/80 text-sm" style={{ fontFamily: 'Archivo, serif' }}>{card.role}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* New white quote section requested by user */}
+      <section className="w-full bg-white py-16">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="mx-auto w-8 md:w-12 lg:w-16">
+            <img src={image31} alt="decorative" className="w-full h-auto mx-auto block" />
+          </div>
+
+          <p className="mt-8 mx-auto text-black" style={{ fontFamily: 'Archivo, serif', fontWeight: 300 as any, fontStyle: 'normal', fontSize: '28px', lineHeight: '120%', letterSpacing: '-0.02em', textAlign: 'center', maxWidth: 900 }}>
+            “The entire world is our family. We don’t see human made divisions created by borders, backgrounds, or beliefs because at our core, we are all connected. We believe that humanity is one, bound by love, compassion, and shared experiences. No man-made boundary can change the truth that we are part of the same global family, walking this journey of life together.”
+          </p>
         </div>
       </section>
 

@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -20,24 +21,22 @@ export default function Navbar() {
     ? 'text-gray-900 font-medium hover:text-green-600 transition-colors'
     : 'text-white font-medium hover:text-green-300 transition-colors';
 
+  const navbarStyle: React.CSSProperties = scrolled
+    ? { backgroundColor: '#ffffff', boxShadow: '0 1px 6px rgba(16,24,40,0.08)' }
+    : { backgroundColor: 'transparent', boxShadow: 'none' };
+
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 py-4 px-8 transition-colors duration-200"
-      style={{
-        backgroundColor: scrolled ? '#ffffff' : 'transparent',
-        boxShadow: scrolled ? '0 1px 6px rgba(16,24,40,0.08)' : 'none'
-      }}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 py-4 px-8 transition-colors duration-200" style={navbarStyle}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center" style={{ gap: '1px' }}>
           {/* <img src={logoA} alt="Logo A" style={{ width: '100px', height: '48px', objectFit: 'contain' }} /> */}
           <img src={logoB} alt="Logo B" className="w-40 md:w-72 lg:w-80 h-12 object-contain" />
         </div>
 
-        <div className="flex items-center gap-10">
-          <a href="#packages" className={linkClass}>
+        <div className="hidden md:flex items-center gap-10">
+          <Link to="/packages" className={linkClass}>
             Packages
-          </a>
+          </Link>
 
           <div className="relative group">
             <button className={`${linkClass} flex items-center gap-1`}>
@@ -79,7 +78,29 @@ export default function Navbar() {
             Contact Us
           </a>
         </div>
+
+        {/* Mobile menu toggle */}
+        <div className="md:hidden flex items-center">
+          <button onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu" className="p-2 rounded-md bg-white/10">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 6h16M4 12h16M4 18h16" stroke={scrolled ? '#111827' : '#ffffff'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+        </div>
       </div>
+
+      {/* Mobile menu panel */}
+      {mobileOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white z-40 shadow-lg">
+          <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-3">
+            <Link to="/packages" className="text-gray-900 font-medium">Packages</Link>
+            <a href="#programs" className="text-gray-900 font-medium">Our Programs</a>
+            <Link to="/about" className="text-gray-900 font-medium">About Us</Link>
+            <a href="#blogs" className="text-gray-900 font-medium">Blogs</a>
+            <a href="#contact" className="text-white font-medium inline-flex items-center justify-center px-4 py-2 rounded-full" style={{ background: 'linear-gradient(91.87deg, #00C5C5 0%, #009F26 100%)' }}>Contact Us</a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
