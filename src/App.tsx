@@ -17,6 +17,8 @@ import CommunityTours from './pages/CommunityTours';
 import MICETours from './pages/MICETours';
 import AboutUs from './pages/AboutUs';
 import Packages from './pages/Packages';
+import Blog1 from './pages/Blog1';
+import Blog2 from './pages/Blog2';
 import { Routes, Route } from 'react-router-dom';
 
 function HomePage() {
@@ -49,6 +51,8 @@ function App() {
       <Route path="/mice-tours" element={<MICETours />} />
   <Route path="/about" element={<AboutUs />} />
     <Route path="/packages" element={<Packages />} />
+      <Route path="/blogs/blog1" element={<Blog1 />} />
+      <Route path="/blogs/blog2" element={<Blog2 />} />
       {/* fallback to home for unknown routes */}
       <Route path="*" element={<HomePage />} />
     </Routes>

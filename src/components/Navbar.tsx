@@ -1,5 +1,5 @@
 import { ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 //import logoA from '../assets/images/image1.png';
 import logoB from '../assets/images/c134a71f95fd3d1af893e2da28fa7b4de520f131 (2).png';
 import { useEffect, useState } from 'react';
@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => {
@@ -17,13 +18,22 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const linkClass = scrolled
+  const isBlogs = location.pathname.startsWith('/blogs');
+  const isBlog2 = location.pathname === '/blogs/blog2';
+
+  const activeScrolled = scrolled || isBlogs;
+
+  const linkClass = activeScrolled
     ? 'text-gray-900 font-medium hover:text-green-600 transition-colors'
     : 'text-white font-medium hover:text-green-300 transition-colors';
 
-  const navbarStyle: React.CSSProperties = scrolled
-    ? { backgroundColor: '#ffffff', boxShadow: '0 1px 6px rgba(16,24,40,0.08)' }
-    : { backgroundColor: 'transparent', boxShadow: 'none' };
+  let navbarStyle: React.CSSProperties = { backgroundColor: 'transparent', boxShadow: 'none' };
+  if (isBlog2 && !scrolled) {
+    // On Blog2 page show the green background behind the navbar when not scrolled
+    navbarStyle = { backgroundColor: '#B3E4BF', boxShadow: 'none' };
+  } else if (activeScrolled) {
+    navbarStyle = { backgroundColor: '#ffffff', boxShadow: '0 1px 6px rgba(16,24,40,0.08)' };
+  }
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 py-4 px-8 transition-colors duration-200" style={navbarStyle}>
@@ -55,9 +65,16 @@ export default function Navbar() {
             About Us
           </Link>
 
-          <a href="#blogs" className={linkClass}>
-            Blogs
-          </a>
+          <div className="relative group">
+            <button className={`${linkClass} flex items-center gap-1`}>
+              Blogs
+              <ChevronDown className={`${activeScrolled ? 'text-gray-900' : 'text-white'} w-4 h-4`} />
+            </button>
+            <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <Link to="/blogs/blog1" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-t-lg">Blog 1</Link>
+              <Link to="/blogs/blog2" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-b-lg">Blog 2</Link>
+            </div>
+          </div>
           {/* Contact Us button with exact styling */}
           <a
             href="#contact"
@@ -96,7 +113,8 @@ export default function Navbar() {
             <Link to="/packages" className="text-gray-900 font-medium">Packages</Link>
             <a href="#programs" className="text-gray-900 font-medium">Our Programs</a>
             <Link to="/about" className="text-gray-900 font-medium">About Us</Link>
-            <a href="#blogs" className="text-gray-900 font-medium">Blogs</a>
+            <Link to="/blogs/blog1" className="text-gray-900 font-medium">Blog 1</Link>
+            <Link to="/blogs/blog2" className="text-gray-900 font-medium">Blog 2</Link>
             <a href="#contact" className="text-white font-medium inline-flex items-center justify-center px-4 py-2 rounded-full" style={{ background: 'linear-gradient(91.87deg, #00C5C5 0%, #009F26 100%)' }}>Contact Us</a>
           </div>
         </div>
