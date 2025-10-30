@@ -10,7 +10,6 @@ import image21 from '../assets/images/image21.png';
 import image23 from '../assets/images/image23.png';
 import image24 from '../assets/images/image24.png';
 import team1 from '../assets/images/image30.png';
-import team2 from '../assets/images/image30.png';
 import image31 from '../assets/images/image31.png';
 
 export default function AboutUs() {
@@ -60,17 +59,16 @@ export default function AboutUs() {
             showBadge={false}
             titleOverride={(
               <span style={{ display: 'inline-block', marginTop: '-80px' }}>
-              <span style={{
-                fontFamily: 'Cormorant, serif',
-                fontWeight: 700,
-                fontStyle: 'italic',
-                fontSize: '50px',
-                lineHeight: '48px',
-                letterSpacing: '-5%',
-                textTransform: 'capitalize',
-                display: 'inline-block',
-                textAlign: 'center'
-              }}>
+              <span className="about-title" style={{
+                  fontFamily: 'Cormorant, serif',
+                  fontWeight: 700,
+                  fontStyle: 'italic',
+                  lineHeight: '48px',
+                  letterSpacing: '-5%',
+                  textTransform: 'capitalize',
+                  display: 'inline-block',
+                  textAlign: 'center'
+                }}>
                 Traveon
               </span>
 
@@ -108,6 +106,8 @@ export default function AboutUs() {
             </span>
           )}
             />
+
+            <style>{`.about-title{font-size:50px} @media(max-width:767px){ .about-title{font-size:28px} }`}</style>
 
             {/* Replace the Hero's wavy divider with a gentler curve on the About page only */}
             <div className="w-full">
@@ -381,7 +381,7 @@ export default function AboutUs() {
 
                 {/* Profile 2: image right, content left on md+ */}
                 <div className="flex w-full flex-col md:flex-row md:justify-between items-center md:items-center gap-4">
-                  <img src={team2} alt="team member 2" className="w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 object-cover rounded-lg md:-mr-16" />
+                  <img src={image31} alt="team member 2" className="w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 object-cover rounded-lg md:-mr-16" />
                   <div className="text-left md:flex-1 md:pl-16 lg:pl-20">
                     <h4 className="text-lg md:text-xl font-semibold text-white" style={{ fontFamily: 'Lato, sans-serif' }}>Mr Abhineet Gupta</h4>
                     <p className="mt-2 text-sm md:text-base text-white/90" style={{ fontFamily: 'Archivo, serif' }}>A seasoned business strategist with 14 years of diverse experience in travel and hospitality industries leading global companies like OYO & Trip.com</p>
@@ -425,7 +425,7 @@ export default function AboutUs() {
             <img src={image31} alt="decorative" className="w-full h-auto mx-auto block" />
           </div>
 
-          <p className="mt-8 mx-auto text-black" style={{ fontFamily: 'Archivo, serif', fontWeight: 300 as any, fontStyle: 'normal', fontSize: '28px', lineHeight: '120%', letterSpacing: '-0.02em', textAlign: 'center', maxWidth: 900 }}>
+          <p className="mt-8 mx-auto text-black" style={{ fontFamily: 'Archivo, serif', fontWeight: 300, fontStyle: 'normal', fontSize: '28px', lineHeight: '120%', letterSpacing: '-0.02em', textAlign: 'center', maxWidth: 900 }}>
             “The entire world is our family. We don’t see human made divisions created by borders, backgrounds, or beliefs because at our core, we are all connected. We believe that humanity is one, bound by love, compassion, and shared experiences. No man-made boundary can change the truth that we are part of the same global family, walking this journey of life together.”
           </p>
         </div>

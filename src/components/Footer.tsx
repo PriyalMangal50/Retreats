@@ -26,8 +26,8 @@ export default function Footer() {
   return (
     <footer className="flex flex-col items-center w-full bg-white">
       <div className="flex flex-col max-w-[1200px] items-start w-full px-6 py-10">
-        <div className="flex items-start gap-12 w-full">
-          <div className="flex flex-col w-[340px] items-start gap-[15px]">
+        <div className="flex flex-col md:flex-row items-start gap-12 w-full">
+          <div className="flex flex-col w-full md:w-[340px] items-start gap-[15px]">
             <img className="w-[120px] h-[120px] object-cover" alt="Retreats by Traveon Logo" src={images.logo} />
 
             <p className={`[font-family:'Archivo',Helvetica] font-light text-[#697a75] tracking-[-0.32px] text-base leading-[22px]`}>
@@ -36,7 +36,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="inline-flex items-start justify-center gap-6 px-0 py-6">
+          <div className="inline-flex flex-col md:flex-row items-start justify-center gap-6 px-0 py-6 w-full">
             {footerColumns.map((column, index) => (
               <nav key={index} className="flex flex-col w-40 items-start gap-5">
                 <h3 className="mt-[-1.00px] [font-family:'Archivo',Helvetica] font-semibold text-[#2a2f2e] text-xl tracking-[-0.40px] leading-6">
@@ -58,7 +58,7 @@ export default function Footer() {
               </nav>
             ))}
 
-            <div className="flex flex-col w-[260px] items-start gap-5">
+            <div className="flex flex-col w-full md:w-[260px] items-start gap-5">
               <h3 className="mt-[-1.00px] [font-family:'Archivo',Helvetica] font-semibold text-[#2a2f2e] text-xl tracking-[-0.40px] leading-6">
                 Stay Connected
               </h3>

@@ -110,7 +110,7 @@ export default function Packages() {
             <aside className="lg:col-span-1">
               <div className="bg-gray-50 p-6 rounded-lg sticky top-28">
                 {/* overlapping image card: half sits in hero (above) and half in this details area */}
-                <div className="absolute left-1/2 -translate-x-1/2 -top-40 md:-top-48 lg:-top-56 z-40">
+                <div className="absolute left-1/2 -translate-x-1/2 -top-24 sm:-top-32 md:-top-48 lg:-top-56 z-40">
                     <div className="relative">
                       <img src={image33} alt="package highlight" className="h-64 md:h-80 lg:h-96 w-auto max-w-none rounded-xl shadow-2xl" />
 
