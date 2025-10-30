@@ -15,6 +15,7 @@ import WellnessRetreats from './pages/WellnessRetreats';
 import CorporateRetreats from './pages/CorporateRetreats';
 import CommunityTours from './pages/CommunityTours';
 import MICETours from './pages/MICETours';
+import AboutUs from './pages/AboutUs';
 import { Routes, Route } from 'react-router-dom';
 
 function HomePage() {
@@ -45,6 +46,7 @@ function App() {
       <Route path="/corporate-retreats" element={<CorporateRetreats />} />
       <Route path="/community-tours" element={<CommunityTours />} />
       <Route path="/mice-tours" element={<MICETours />} />
+  <Route path="/about" element={<AboutUs />} />
       {/* fallback to home for unknown routes */}
       <Route path="*" element={<HomePage />} />
     </Routes>

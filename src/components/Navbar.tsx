@@ -52,9 +52,9 @@ export default function Navbar() {
             </div>
           </div>
 
-          <a href="#about" className={linkClass}>
+          <Link to="/about" className={linkClass}>
             About Us
-          </a>
+          </Link>
 
           <a href="#blogs" className={linkClass}>
             Blogs

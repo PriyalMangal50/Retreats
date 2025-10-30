@@ -159,9 +159,9 @@ export default function CorporateRetreats() {
 
             <div className="grid grid-cols-1 gap-6 max-w-xl">
               {[
-                { img: images.programs[2], title: 'Purposeful Design', desc: 'Retreats that strengthen relationships, boost engagement, and enhance team performance with lasting results.' },
-                { img: images.programs[3], title: 'Evidence-led Facilitation', desc: 'Retreats that strengthen relationships, boost engagement, and enhance team performance with lasting results.' },
-                { img: images.programs[4], title: 'Holistic Well-being', desc: 'Retreats that strengthen relationships, boost engagement, and enhance team performance with lasting results.' },
+                { img: images.programs[17], title: 'Purposeful Design', desc: 'Retreats that strengthen relationships, boost engagement, and enhance team performance with lasting results.' },
+                { img: images.programs[17], title: 'Evidence-led Facilitation', desc: 'Retreats that strengthen relationships, boost engagement, and enhance team performance with lasting results.' },
+                { img: images.programs[17], title: 'Holistic Well-being', desc: 'Retreats that strengthen relationships, boost engagement, and enhance team performance with lasting results.' },
               ].map((p, idx) => (
                 <div key={idx} className="flex items-start gap-4">
                   <div className="w-12 h-12 flex-shrink-0 overflow-hidden rounded-md">

@@ -18,3 +18,19 @@
 		display: none; /* Chrome, Safari, Opera */
 	}
 }
+
+/* Arc rotate animation for AboutUs page */
+.arc-rotate {
+	display: inline-block;
+	animation: arc-rotate 30s linear infinite;
+}
+
+@keyframes arc-rotate {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(-360deg); }
+}
+
+/* keep images upright as they orbit */
+.arc-rotate img {
+	will-change: transform;
+}

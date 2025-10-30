@@ -17,7 +17,7 @@ import program20 from './images/program20.png';
 import program12 from './images/program12.png';
 
 import image10 from './images/image10.png'; 
-
+import image from './images/image.png';
 import program16 from './images/program16.png';
 import program17 from './images/program17.png';
 import testimonial1 from './images/image.png';
@@ -33,7 +33,7 @@ import image20 from './images/image20.png';
 import blog1 from './images/blog1.svg';
 import blog2 from './images/blog2.svg';
 import blog3 from './images/blog3.svg';
-
+import image22 from './images/image22.png';
 import PROGRAM18 from './images/PROGRAM18.png';
 export const images = {
   logo,
@@ -42,7 +42,7 @@ export const images = {
     background: heroBg,
   },
 
-  programs: [program1, program2, program3, program4,program5, program6, program7, program8, program9, program11, program12, program13, program16, program17, PROGRAM18, program20, image20],
+  programs: [program1, program2, program3, program4,program5, program6, program7, program8, program9, program11, program12, program13, program16, program17, PROGRAM18, program20, image20, image, image22],
 
   program10,image10,
 

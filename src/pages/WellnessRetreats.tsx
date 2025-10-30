@@ -241,7 +241,7 @@ export default function WellnessRetreats() {
                     display: 'inline-block'
                   }}>Retreat? </span>
                 </h3>
-                <p style={{ fontFamily: 'Archivo, sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', lineHeight: '28px', letterSpacing: '-2%', color: '#ffffff' }}>
+                <p style={{ fontFamily: 'Lato, sans-serif', fontWeight: 400, fontStyle: 'normal', fontSize: '20px', lineHeight: '28px', letterSpacing: '-2%', color: '#ffffff' }}>
                   Wellness retreats give teams and individuals space to disconnect, reflect and re-energize. We design evidence-backed programs that blend movement, mindfulness, nature immersion and group facilitation to bring lasting positive change.
                 </p>
               </div>
@@ -284,7 +284,7 @@ export default function WellnessRetreats() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {(() => {
               const featured = [
                 {
@@ -311,33 +311,33 @@ export default function WellnessRetreats() {
               ];
 
               return featured.map((f, i) => (
-                <div key={i} className="w-[384px] h-[484px] rounded-[16px] bg-white shadow-lg flex flex-col items-center overflow-hidden">
-                  <div className="w-[384px] h-[351px] rounded-t-[16px] overflow-hidden relative">
+                <div key={i} className="w-full max-w-md bg-white shadow-lg rounded-lg overflow-hidden flex flex-col">
+                  <div className="w-full h-56 md:h-72 lg:h-80 overflow-hidden relative">
                     <img src={f.img} alt={`package-${i}`} className="w-full h-full object-cover" />
 
                     {/* Price badge - top left */}
-                    <div className="absolute left-3 top-3 bg-[#FFEB86] rounded-full px-3 py-2 text-sm" style={{ width: 96 }}>
+                    <div className="absolute left-3 top-3 bg-[#FFEB86] rounded-full px-3 py-2 text-sm" style={{ minWidth: 96 }}>
                       <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, fontWeight: 400 }}>Starting @</div>
                       <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 18, fontWeight: 700 }}>{f.price}</div>
                     </div>
 
                     {/* Duration badge - bottom right */}
-                    <div className="absolute right-3 bottom-3 bg-white rounded-full px-3 py-2 text-sm shadow" style={{ width: 96 }}>
+                    <div className="absolute right-3 bottom-3 bg-white rounded-full px-3 py-2 text-sm shadow" style={{ minWidth: 96 }}>
                       <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, fontWeight: 700 }}>{f.duration}</div>
                       <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, fontWeight: 400 }}>Tour Duration</div>
                     </div>
                   </div>
 
-                  <div className="w-[360px] h-[70px] mt-3">
-                    <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 18, lineHeight: '22px' }}>{f.title}</div>
-                    <div style={{ fontFamily: 'Archivo, sans-serif', fontWeight: 400, fontSize: 14, lineHeight: '18px', marginTop: 6 }}>
-                      {f.desc}
-                    </div>
+                  <div className="p-4 flex-1">
+                    <div className="text-base md:text-lg font-bold" style={{ fontFamily: 'Lato, sans-serif' }}>{f.title}</div>
+                    <div className="text-sm text-gray-600 mt-2" style={{ fontFamily: 'Archivo, sans-serif' }}>{f.desc}</div>
                   </div>
 
-                  <div className="w-[360px] mt-4 flex items-center justify-between gap-4">
-                    <button className="w-1/2 bg-gray-200 text-black py-2 rounded">View Details</button>
-                    <button className="w-1/2 bg-black text-white py-2 rounded">Enquire Now</button>
+                  <div className="p-4 pt-0">
+                    <div className="flex gap-3">
+                      <button className="flex-1 bg-gray-200 text-black py-2 rounded">View Details</button>
+                      <button className="flex-1 bg-black text-white py-2 rounded">Enquire Now</button>
+                    </div>
                   </div>
                 </div>
               ));
