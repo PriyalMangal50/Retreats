@@ -20,9 +20,10 @@ export default function Navbar() {
 
   const isBlogs = location.pathname.startsWith('/blogs');
   const isBlog2 = location.pathname === '/blogs/blog2';
+  const isPackages = location.pathname === '/packages' || location.pathname.startsWith('/packages/');
   const isAuth = location.pathname === '/login' || location.pathname === '/signup';
 
-  const activeScrolled = scrolled || isBlogs || isAuth;
+  const activeScrolled = scrolled || isBlogs || isAuth || isPackages;
 
   const linkClass = activeScrolled
     ? 'text-gray-900 font-medium hover:text-green-600 transition-colors'
@@ -82,8 +83,8 @@ export default function Navbar() {
             Sign Up
           </Link>
           {/* Contact Us button with exact styling */}
-          <a
-            href="#contact"
+          <Link
+            to="/enquire"
             className="flex items-center justify-center text-sm font-medium text-white"
             style={{
               width: '103px',
@@ -99,7 +100,7 @@ export default function Navbar() {
             }}
           >
             Contact Us
-          </a>
+          </Link>
         </div>
 
         {/* Mobile menu toggle */}
@@ -123,7 +124,7 @@ export default function Navbar() {
             <Link to="/blogs/blog2" className="text-gray-900 font-medium">Blog 2</Link>
             <Link to="/login" className="text-gray-900 font-medium">Login</Link>
             <Link to="/signup" className="text-white font-medium inline-flex items-center justify-center px-4 py-2 rounded-full" style={{ background: 'linear-gradient(91.87deg, #00C5C5 0%, #009F26 100%)' }}>Sign Up</Link>
-            <a href="#contact" className="text-white font-medium inline-flex items-center justify-center px-4 py-2 rounded-full" style={{ background: 'linear-gradient(91.87deg, #00C5C5 0%, #009F26 100%)' }}>Contact Us</a>
+            <Link to="/enquire" className="text-white font-medium inline-flex items-center justify-center px-4 py-2 rounded-full" style={{ background: 'linear-gradient(91.87deg, #00C5C5 0%, #009F26 100%)' }}>Contact Us</Link>
           </div>
         </div>
       )}
