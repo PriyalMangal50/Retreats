@@ -20,8 +20,9 @@ export default function Navbar() {
 
   const isBlogs = location.pathname.startsWith('/blogs');
   const isBlog2 = location.pathname === '/blogs/blog2';
+  const isAuth = location.pathname === '/login' || location.pathname === '/signup';
 
-  const activeScrolled = scrolled || isBlogs;
+  const activeScrolled = scrolled || isBlogs || isAuth;
 
   const linkClass = activeScrolled
     ? 'text-gray-900 font-medium hover:text-green-600 transition-colors'
@@ -75,6 +76,11 @@ export default function Navbar() {
               <Link to="/blogs/blog2" className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-b-lg">Blog 2</Link>
             </div>
           </div>
+          <Link to="/login" className={linkClass}>Login</Link>
+
+          <Link to="/signup" className="inline-flex items-center justify-center text-sm font-medium text-white px-4 py-2 rounded-full" style={{ background: 'linear-gradient(91.87deg, #00C5C5 0%, #009F26 100%)' }}>
+            Sign Up
+          </Link>
           {/* Contact Us button with exact styling */}
           <a
             href="#contact"
@@ -115,6 +121,8 @@ export default function Navbar() {
             <Link to="/about" className="text-gray-900 font-medium">About Us</Link>
             <Link to="/blogs/blog1" className="text-gray-900 font-medium">Blog 1</Link>
             <Link to="/blogs/blog2" className="text-gray-900 font-medium">Blog 2</Link>
+            <Link to="/login" className="text-gray-900 font-medium">Login</Link>
+            <Link to="/signup" className="text-white font-medium inline-flex items-center justify-center px-4 py-2 rounded-full" style={{ background: 'linear-gradient(91.87deg, #00C5C5 0%, #009F26 100%)' }}>Sign Up</Link>
             <a href="#contact" className="text-white font-medium inline-flex items-center justify-center px-4 py-2 rounded-full" style={{ background: 'linear-gradient(91.87deg, #00C5C5 0%, #009F26 100%)' }}>Contact Us</a>
           </div>
         </div>

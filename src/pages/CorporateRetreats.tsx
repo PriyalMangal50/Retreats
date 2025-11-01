@@ -8,7 +8,6 @@ import Why from '../components/Why';
 import ImageCTA from '../components/ImageCTA';
 import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
-import Latest from '../components/Latest';
 import Subscribe from '../components/Subscribe';
 import Footer from '../components/Footer';
 import HealingTools from '../components/HealingTools';
@@ -260,7 +259,6 @@ export default function CorporateRetreats() {
         </div>
       </section>
       <FAQ />
-      <Latest />
       <Subscribe />
       <Footer />
     </div>

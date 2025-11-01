@@ -8,7 +8,6 @@ import Why from '../components/Why';
 import ImageCTA from '../components/ImageCTA';
 import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
-import Latest from '../components/Latest';
 import Subscribe from '../components/Subscribe';
 import Footer from '../components/Footer';
 import HealingTools from '../components/HealingTools';
@@ -280,9 +279,7 @@ At Retreats by Traveon, our MICE Tours are designed to combine business objectiv
         </div>
       </section>
       <Testimonials />
-      <FAQ />
-      <Latest />
-      <Subscribe />
+      <FAQ />      <Subscribe />
       <Footer />
     </div>
   );
