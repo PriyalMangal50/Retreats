@@ -108,7 +108,8 @@ export default function Packages() {
 
             {/* Right column */}
             <aside className="lg:col-span-1">
-              <div className="bg-gray-50 p-6 rounded-lg sticky top-28">
+              {/* add top padding so the boxes sit below the overlapping image card; keep image offsets unchanged */}
+              <div className="bg-gray-50 p-6 pt-44 md:pt-56 lg:pt-64 rounded-lg sticky top-28">
                 {/* overlapping image card: half sits in hero (above) and half in this details area */}
                 <div className="absolute left-1/2 -translate-x-1/2 -top-24 sm:-top-32 md:-top-48 lg:-top-56 z-40">
                     <div className="relative">
@@ -124,17 +125,44 @@ export default function Packages() {
                         </div>
                     </div>
                 </div>
-                <h4 className="font-semibold">Quick Details</h4>
-                <ul className="mt-4 text-gray-700">
-                  <li><strong>Duration:</strong> 5 days</li>
-                  <li><strong>Group size:</strong> up to 12</li>
-                  <li><strong>Level:</strong> Easy</li>
-                </ul>
+                {/* Two stacked info boxes shown below the overlapping image card */}
+                <div className="flex flex-col gap-4">
+                  {/* Available Dates */}
+                  <div className="bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
+                    <h4 className="text-sm font-semibold mb-2">Available Dates</h4>
+                    <div className="flex items-center gap-3">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                        <rect x="3" y="5" width="18" height="16" rx="2" stroke="#065f46" strokeWidth="1.2" fill="#f0fdf4" />
+                        <path d="M16 3v4M8 3v4" stroke="#065f46" strokeWidth="1.2" strokeLinecap="round" />
+                      </svg>
+                      <div>
+                        <div className="text-sm font-medium" style={{ fontFamily: 'Archivo, serif' }}>10 Nov 2025 - 14 Nov 2025</div>
+                        <div className="text-xs text-gray-500">Seats are limited — book early</div>
+                      </div>
+                    </div>
+                  </div>
 
-                <div className="mt-6">
-                  <div className="text-xl font-bold">$1,299</div>
-                  <div className="text-sm text-gray-500">per person</div>
-                  <button className="mt-4 w-full bg-emerald-500 text-white py-2 rounded-full">Reserve your spot</button>
+                  {/* Need Help */}
+                  <div className="bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
+                    <h4 className="text-sm font-semibold mb-3">Need Help?</h4>
+
+                    <div className="flex items-center gap-3 mb-2">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 3.08 4.18 2 2 0 0 1 5 2h3a2 2 0 0 1 2 1.72c.12.9.38 1.78.77 2.6a2 2 0 0 1-.45 2.11L9.91 9.91a16 16 0 0 0 6 6l1.48-1.48a2 2 0 0 1 2.11-.45c.82.39 1.7.65 2.6.77A2 2 0 0 1 22 16.92z" stroke="#065f46" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      <a href="tel:+919876543210" className="text-sm font-medium" style={{ fontFamily: 'Archivo, serif' }}>+91 98765 43210</a>
+                    </div>
+
+                    <div className="flex items-center gap-3 mb-3">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                        <path d="M3 8.5v7A2.5 2.5 0 0 0 5.5 18h13a2.5 2.5 0 0 0 2.5-2.5v-7" stroke="#065f46" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M21 8.5l-9 6-9-6" stroke="#065f46" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      <a href="mailto:help@example.com" className="text-sm" style={{ fontFamily: 'Archivo, serif' }}>help@example.com</a>
+                    </div>
+
+                    <button className="mt-1 w-full bg-emerald-500 text-white py-2 rounded-full">Chat with Us</button>
+                  </div>
                 </div>
               </div>
             </aside>
