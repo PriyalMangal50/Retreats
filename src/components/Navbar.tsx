@@ -87,8 +87,8 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center gap-10">
-          <Link to="/packages" className={linkClass}>
-            Packages
+          <Link to="/" className={linkClass}>
+            Home
           </Link>
 
           <div className="relative group">
@@ -133,28 +133,9 @@ export default function Navbar() {
           </Link>
 
           <div className="relative group">
-            <button className={`${linkClass} flex items-center gap-1`}>
+            <Link to="/blogs" className={linkClass}>
               Blogs
-              <ChevronDown
-                className={`${
-                  activeScrolled ? "text-gray-900" : "text-white"
-                } w-4 h-4`}
-              />
-            </button>
-            <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              <Link
-                to="/blogs/blog1"
-                className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-t-lg"
-              >
-                Blog 1
-              </Link>
-              <Link
-                to="/blogs/blog2"
-                className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-b-lg"
-              >
-                Blog 2
-              </Link>
-            </div>
+            </Link>
           </div>
           {/* <Link to="/login" className={linkClass}>
             Login
@@ -330,8 +311,8 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white z-40 shadow-lg">
           <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-3">
-            <Link to="/packages" className="text-gray-900 font-medium">
-              Packages
+            <Link to="/" className="text-gray-900 font-medium">
+              Home
             </Link>
             <a href="#programs" className="text-gray-900 font-medium">
               Our Programs
@@ -339,11 +320,8 @@ export default function Navbar() {
             <Link to="/about" className="text-gray-900 font-medium">
               About Us
             </Link>
-            <Link to="/blogs/blog1" className="text-gray-900 font-medium">
-              Blog 1
-            </Link>
-            <Link to="/blogs/blog2" className="text-gray-900 font-medium">
-              Blog 2
+            <Link to="/blogs" className="text-gray-900 font-medium">
+              Blogs
             </Link>
             {/* <Link to="/login" className="text-gray-900 font-medium">
               Login
