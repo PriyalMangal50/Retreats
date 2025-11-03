@@ -30,6 +30,7 @@ import RouteChangeTracker from "./components/RouteChangeTracker";
 import AdminRoute from "./components/AdminRoute";
 import VerifyEmail from "./pages/VerifyEmail";
 import Profile from "./pages/Profile";
+import Blogs from "./pages/Blogs";
 
 function HomePage() {
   return (
@@ -71,6 +72,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/blogs/blog1" element={<Blog1 />} />
         <Route path="/blogs/blog2" element={<Blog2 />} />
+        <Route path="/blogs" element={<Blogs />} />
 
         <Route element={<AdminRoute />}>
           <Route path="/admin/dashboard" element={<Dashboard />} />
