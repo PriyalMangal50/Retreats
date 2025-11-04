@@ -18,7 +18,7 @@ export default function Hero({
         {showBadge && (
           <div className="inline-block mb-8">
             <div className="bg-gradient-to-r from-teal-400 to-green-500 p-1 rounded-full inline-block">
-              <div className="bg-black text-white px-4 py-2 rounded-full">
+              <div className="bg-[#033520] text-white px-4 py-2 rounded-full">
                 Transforming Experiences Since 2020
               </div>
             </div>
