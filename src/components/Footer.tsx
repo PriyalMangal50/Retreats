@@ -87,12 +87,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-start gap-6 px-3 py-6 w-full border-t border-[#cdd9e3]">
-          <p className="flex-1 font-light text-[#35433f] text-base leading-[22px]">
+        <div className="flex flex-col md:flex-row items-center gap-6 px-3 py-6 w-full border-t border-[#cdd9e3]">
+          <p className="flex-1 font-light text-[#35433f] text-base leading-[22px] text-center md:text-left">
             © {new Date().getFullYear()} Retreats by Traveon. All rights reserved.
           </p>
 
-          <nav className="inline-flex items-center gap-6">
+          <nav className="inline-flex flex-wrap justify-center md:justify-start items-center gap-6">
             {policyLinks.map((policy, index) => (
               <a
                 key={index}
