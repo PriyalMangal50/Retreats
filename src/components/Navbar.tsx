@@ -288,21 +288,11 @@ export default function Navbar() {
             aria-label="Toggle menu"
             className="p-2 rounded-md bg-white/10"
           >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M4 6h16M4 12h16M4 18h16"
-                stroke={scrolled ? "#111827" : "#ffffff"}
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            {mobileOpen ? (
+              "Close"
+            ) : (
+              "Menu"
+            )}
           </button>
         </div>
       </div>
