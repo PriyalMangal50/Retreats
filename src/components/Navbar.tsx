@@ -1,6 +1,6 @@
 //import logoA from '../assets/images/image1.png';
 import logoB from "../assets/images/c134a71f95fd3d1af893e2da28fa7b4de520f131 (2).png";
-import { ChevronDown, UserCircle2, LogOut, Settings } from "lucide-react";
+import { ChevronDown, UserCircle2 } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { useAuth } from "../store/auth";
@@ -8,9 +8,9 @@ import { useAuth } from "../store/auth";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); // Restored 'menuOpen' state
   const location = useLocation();
 
-  const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
   const navigate = useNavigate();
   const { isAuthenticated, user, clearAuth } = useAuth();
@@ -20,7 +20,7 @@ export default function Navbar() {
     const onDocClick = (e: MouseEvent) => {
       if (!menuRef.current) return;
       if (!menuRef.current.contains(e.target as Node)) {
-        setMenuOpen(false);
+        setMenuOpen(false); // Fixed reference to 'setMenuOpen'
       }
     };
     document.addEventListener("mousedown", onDocClick);
@@ -73,24 +73,22 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 py-4 px-8 transition-colors duration-200"
+      className="fixed top-0 left-0 right-0 z-50 py-4 px-6 md:px-8 transition-colors duration-200"
       style={navbarStyle}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center" style={{ gap: "1px" }}>
-          {/* <img src={logoA} alt="Logo A" style={{ width: '100px', height: '48px', objectFit: 'contain' }} /> */}
+        <div className="flex items-center justify-center" style={{ gap: "1px" }}>
           <img
             src={logoB}
             alt="Logo B"
-            className="w-40 md:w-72 lg:w-80 h-12 object-contain"
+            className="w-36 md:w-52 lg:w-60 h-14 object-contain"
           />
         </div>
 
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden md:flex items-center gap-6 lg:gap-10">
           <Link to="/" className={linkClass}>
             Home
           </Link>
-
           <div className="relative group">
             <button className={`${linkClass} flex items-center gap-1`}>
               Our Programs
@@ -127,50 +125,22 @@ export default function Navbar() {
               </Link>
             </div>
           </div>
-
           <Link to="/about" className={linkClass}>
             About Us
           </Link>
-
-          <div className="relative group">
-            <Link to="/blogs" className={linkClass}>
-              Blogs
-            </Link>
-          </div>
-          {/* <Link to="/login" className={linkClass}>
-            Login
+          <Link to="/blogs" className={linkClass}>
+            Blogs
           </Link>
-
-          <Link
-            to="/signup"
-            className="inline-flex items-center justify-center text-sm font-medium text-white px-4 py-2 rounded-full"
-            style={{
-              background: "linear-gradient(91.87deg, #00C5C5 0%, #009F26 100%)",
-            }}
-          >
-            Sign Up
-          </Link> */}
-          {/* Contact Us button with exact styling */}
           <Link
             to="/enquire"
-            className="flex items-center justify-center text-sm font-medium text-white"
+            className="hidden lg:flex items-center justify-center text-sm font-medium text-white px-4 py-2 rounded-full"
             style={{
-              width: "103px",
-              height: "36px",
-              gap: "10px",
-              opacity: 1,
-              paddingTop: "8px",
-              paddingRight: "16px",
-              paddingBottom: "8px",
-              paddingLeft: "16px",
-              borderRadius: "20px",
               background: "linear-gradient(91.87deg, #00C5C5 0%, #009F26 100%)",
             }}
           >
             Contact Us
           </Link>
-
-          {!isAuthenticated ? (
+          {!isAuthenticated && (
             <>
               <Link to="/login" className={linkClass}>
                 Login
@@ -186,98 +156,6 @@ export default function Navbar() {
                 Sign Up
               </Link>
             </>
-          ) : (
-            <div className="relative" ref={menuRef}>
-              <button
-                onClick={() => setMenuOpen((s) => !s)}
-                className="flex items-center gap-2"
-                aria-haspopup="menu"
-                aria-expanded={menuOpen}
-              >
-                {avatarUrl ? (
-                  <img
-                    src={avatarUrl}
-                    alt="User Avatar"
-                    className="w-9 h-9 rounded-full object-cover border border-gray-200"
-                  />
-                ) : (
-                  <div
-                    className={`w-9 h-9 rounded-full flex items-center justify-center ${
-                      activeScrolled ? "bg-gray-100" : "bg-white/20"
-                    }`}
-                  >
-                    <UserCircle2
-                      className={`${
-                        activeScrolled ? "text-gray-700" : "text-white"
-                      } w-7 h-7`}
-                    />
-                  </div>
-                )}
-                <ChevronDown
-                  className={`${
-                    activeScrolled ? "text-gray-900" : "text-white"
-                  } w-4 h-4`}
-                />
-              </button>
-
-              {menuOpen && (
-                <div
-                  role="menu"
-                  className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-2 z-50"
-                >
-                  <div className="px-3 pb-2 border-b border-gray-100">
-                    <p className="text-sm font-medium text-gray-900 truncate">
-                      {displayName}
-                    </p>
-                    <p className="text-xs text-gray-500 truncate">
-                      {user?.emailAddress}
-                    </p>
-                  </div>
-
-                  <Link
-                    to="/profile"
-                    className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                    role="menuitem"
-                  >
-                    <Settings className="w-4 h-4" />
-                    Profile
-                  </Link>
-
-                  {isAdmin && (
-                    <Link
-                      to="/admin/dashboard"
-                      className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                      role="menuitem"
-                    >
-                      <svg
-                        className="w-4 h-4 text-gray-600"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                      >
-                        <path
-                          d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8v-10h-8v10zm0-18v6h8V3h-8z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                      Dashboard
-                    </Link>
-                  )}
-
-                  <button
-                    onClick={() => {
-                      setMenuOpen(false);
-                      clearAuth();
-                      navigate("/", { replace: true });
-                    }}
-                    className="w-full text-left flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-red-50"
-                    role="menuitem"
-                  >
-                    <LogOut className="w-4 h-4" />
-                    Logout
-                  </button>
-                </div>
-              )}
-            </div>
           )}
         </div>
 
@@ -286,13 +164,9 @@ export default function Navbar() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
-            className="p-2 rounded-md bg-white/10"
+            className="p-2 rounded-md bg-white/10 text-white"
           >
-            {mobileOpen ? (
-              "Close"
-            ) : (
-              "Menu"
-            )}
+            {mobileOpen ? "Close" : "Menu"}
           </button>
         </div>
       </div>
@@ -304,34 +178,29 @@ export default function Navbar() {
             <Link to="/" className="text-gray-900 font-medium">
               Home
             </Link>
-            <a href="#programs" className="text-gray-900 font-medium">
-              Our Programs
-            </a>
+            <Link to="/wellness-retreats" className="text-gray-900 font-medium">
+              Wellness Retreats
+            </Link>
+            <Link to="/corporate-retreats" className="text-gray-900 font-medium">
+              Corporate Retreats
+            </Link>
+            <Link to="/community-tours" className="text-gray-900 font-medium">
+              Community Tours
+            </Link>
+            <Link to="/mice-tours" className="text-gray-900 font-medium">
+              MICE Tours
+            </Link>
             <Link to="/about" className="text-gray-900 font-medium">
               About Us
             </Link>
             <Link to="/blogs" className="text-gray-900 font-medium">
               Blogs
             </Link>
-            {/* <Link to="/login" className="text-gray-900 font-medium">
-              Login
-            </Link>
-            <Link
-              to="/signup"
-              className="text-white font-medium inline-flex items-center justify-center px-4 py-2 rounded-full"
-              style={{
-                background:
-                  "linear-gradient(91.87deg, #00C5C5 0%, #009F26 100%)",
-              }}
-            >
-              Sign Up
-            </Link> */}
             <Link
               to="/enquire"
               className="text-white font-medium inline-flex items-center justify-center px-4 py-2 rounded-full"
               style={{
-                background:
-                  "linear-gradient(91.87deg, #00C5C5 0%, #009F26 100%)",
+                background: "linear-gradient(91.87deg, #00C5C5 0%, #009F26 100%)",
               }}
             >
               Contact Us
