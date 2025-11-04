@@ -190,38 +190,102 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Full-width section showing program23.png without cropping - image displayed intact with centered overlay heading */}
+      
+
+      {/* Who We Are Section */}
+      <section className="w-full py-16 relative" style={{ backgroundColor: '#00502F' }}>
+        <div className="absolute top-0 left-0 w-full">
+          <svg
+            viewBox="0 0 1440 120"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-full h-auto"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0 80 C360 160 1080 160 1440 80 L1440 0 L0 0 Z"
+              fill="#00502F"
+            />
+          </svg>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-white mb-8" style={{ fontFamily: 'Cormorant', fontWeight: 300, fontStyle: 'Light', fontSize: '48px', lineHeight: '54px', letterSpacing: '-8%', textAlign: 'center' }}>
+            —— Who We Are ——
+          </h2>
+
+          <p className="text-white mx-auto mb-12" style={{ fontFamily: 'Lato', fontWeight: 400, fontStyle: 'Regular', fontSize: '22px', lineHeight: '28px', letterSpacing: '-2%', textAlign: 'center', maxWidth: '680px' }}>
+            Born from a vision of weaving wellness, adventure, and purpose into everyday living, Traveon is more than a retreat planner — we’re architects of transformation.<br /><br />
+            We draw inspiration from alchemy of ancient wisdom and modern wellness science. From meditation practices taught by elders, to evidence-backed techniques for mental clarity, every facet of our retreats is crafted with deep intention.<br /><br />
+            We are guides, facilitators, companions — walking alongside those who come to us carrying stress, burnout, or simply a longing for more meaning. And when they leave, we hope they carry away calm, clarity, and a renewed sense of possibility.
+          </p>
+
+          {/* Left Image Stack */}
+          <div className="absolute left-0 bottom-0 transform -translate-y-1/4 -translate-x-1/4">
+            <div className="relative w-64 h-64">
+              <img src={image21} alt="Image 21" className="absolute w-40 h-40 object-cover rounded-lg transform rotate-6" />
+              <img src={image23} alt="Image 23" className="absolute w-40 h-40 object-cover rounded-lg transform -rotate-6 top-8 left-8" />
+              <img src={image24} alt="Image 24" className="absolute w-40 h-40 object-cover rounded-lg transform rotate-3 top-16 left-16" />
+              <img src={team1} alt="Team 1" className="absolute w-40 h-40 object-cover rounded-lg transform -rotate-3 top-24 left-24" />
+            </div>
+          </div>
+
+          {/* Right Image Stack */}
+          <div className="absolute right-0 bottom-0 transform -translate-y-1/4 translate-x-1/4">
+            <div className="relative w-64 h-64">
+              <img src={image31} alt="Image 31" className="absolute w-40 h-40 object-cover rounded-lg transform -rotate-6" />
+              <img src={program23} alt="Program 23" className="absolute w-40 h-40 object-cover rounded-lg transform rotate-6 top-8 right-8" />
+              <img src={program24} alt="Program 24" className="absolute w-40 h-40 object-cover rounded-lg transform -rotate-3 top-16 right-16" />
+              <img src={image24} alt="Image 24" className="absolute w-40 h-40 object-cover rounded-lg transform rotate-3 top-24 right-24" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Duplicate of 'Who We Are' section but using image23.png as the background */}
       <section className="w-full">
         <div className="relative w-full">
-          {/* Use an <img> so the image is never cropped; it will scale responsively */}
-          <img src={program23} alt="program background" className="w-full h-auto object-contain block" />
+          <img src={image23} alt="image23 background" className="w-full h-auto object-contain block" />
 
-          {/* overlay text positioned slightly upward over the image; includes the three paragraphs below the heading */}
-          <div className="absolute inset-0 flex items-start justify-center" style={{ top: '18%' }}>
-            <div className="text-center px-6 max-w-2xl mx-auto">
-              <h3 style={{ fontFamily: 'Cormorant, serif', fontSize: '40px', color: '#fff', fontStyle: 'italic', fontWeight: 700, textShadow: '0 2px 10px rgba(0,0,0,0.6)' }}>
-                —— Who We Are ——
+          {/* Our Mission overlay (responsive: shifts down/right on md+) */}
+          <div className="absolute top-8 left-4 md:top-14 md:left-16 lg:top-20 lg:left-20">
+            <div className="max-w-xs md:max-w-xl text-left">
+              <h3 className="bg-gradient-to-r from-teal-400 via-cyan-500 to-purple-500 bg-clip-text text-transparent text-2xl md:text-[42px] italic" style={{ fontFamily: 'Cormorant, serif', fontWeight: 700, lineHeight: '42px', letterSpacing: '-5%', textAlign: 'center' }}>
+                Our Mission ——
               </h3>
 
-              <div style={{ marginTop: 18, color: '#F8FAFC', textShadow: '0 1px 6px rgba(0,0,0,0.6)' }}>
-                <p className="text-base md:text-lg leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400, letterSpacing: '-4%' }}>
-                  Born from a vision of weaving wellness, adventure, and purpose into everyday living, Traveon is more than a retreat planner — we’re architects of transformation.
+              <div className="mt-3 md:mt-4 text-black">
+                <p className="text-sm md:text-base leading-6 md:leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400 }}>
+                  To craft soulful retreats that blend ancient wisdom + modern science, deliver heartfelt experiences, and ignite transformation — for people and teams alike.
                 </p>
 
-                <p className="mt-6 text-base md:text-lg leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400, letterSpacing: '-4%' }}>
-                  We draw inspiration from alchemy of ancient wisdom and modern wellness science. From meditation practices taught by elders, to evidence-backed techniques for mental clarity, every facet of our retreats is crafted with deep intention.
+
+                <p className="mt-3 text-sm md:text-base leading-6 md:leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400 }}>
+                  To be a trusted partner in the journey toward well-being, purpose, and conscious living.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Our Vision overlay (responsive: shifts up/left on md+) */}
+          <div className="absolute bottom-8 right-4 md:bottom-14 md:right-12 lg:bottom-20 lg:right-20">
+            <div className="max-w-xs md:max-w-xl text-left">
+              <h3 className="bg-gradient-to-r from-teal-400 via-cyan-500 to-purple-500 bg-clip-text text-transparent text-2xl md:text-[42px] italic" style={{ fontFamily: 'Cormorant, serif', fontWeight: 700, lineHeight: '42px', letterSpacing: '-5%', textAlign: 'left' }}>
+                Our Vision ——
+              </h3>
+
+              <div className="mt-3 md:mt-4 text-black">
+                <p className="text-sm md:text-base leading-6 md:leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400, textAlign: 'left' }}>
+                  To craft soulful retreats that blend ancient wisdom + modern science, deliver heartfelt experiences, and ignite transformation — for people and teams alike.
                 </p>
 
-                <p className="mt-6 text-base md:text-lg leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400, letterSpacing: '-4%' }}>
-                  We are guides, facilitators, companions — walking alongside those who come to us carrying stress, burnout, or simply a longing for more meaning. And when they leave, we hope they carry away calm, clarity, and a renewed sense of possibility.
+                <p className="mt-3 text-sm md:text-base leading-6 md:leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400, textAlign: 'left' }}>
+                  To be a trusted partner in the journey toward well-being, purpose, and conscious living.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      
 
       {/* "How it Started" section using program24.png */}
       <section className="w-full">
