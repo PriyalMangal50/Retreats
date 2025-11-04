@@ -11,7 +11,10 @@ export default function Hero({
   showBadge?: boolean;
 }) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pb-32 bg-cover bg-center" style={{ backgroundImage: 'url(/hero-bg.jpg)' }}>
+    <section
+      className="relative min-h-screen flex items-center justify-center pb-32 bg-cover bg-center"
+      style={{ backgroundImage: 'url(/hero-bg.gif)' }} // Updated to use a responsive GIF
+    >
       <div className="absolute bg-black/50"></div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
