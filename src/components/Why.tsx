@@ -43,16 +43,15 @@ export default function Why() {
         </h3>
         <p className="text-center max-w-2xl mx-auto text-gray-700 mb-10">Not just retreats, but transformative journeys that inspire growth and connection</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[20px] justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-8">
           {items.map((it, i) => (
-            <div key={i} className="bg-[#DBF3E0] rounded-[12px] shadow-sm mx-auto" style={{ width: 380, height: 200, paddingTop: 16, paddingRight: 12, paddingBottom: 16, paddingLeft: 12, opacity: 1 }}>
-              <div style={{ height: 50, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <img src={it.img} alt={it.title} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'cover', borderRadius: 8 }} />
-              </div>
-              <div style={{ marginTop: 10 }} className="text-center">
-                <h4 className="font-semibold text-lg text-center">{it.title}</h4>
-                <p className="text-sm text-gray-700">{it.desc}</p>
-              </div>
+            <div
+              key={i}
+              className="flex flex-col items-center bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow"
+            >
+              <img src={it.img} alt={it.title} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'cover', borderRadius: 8 }} />
+              <h3 className="text-xl font-semibold mb-2 text-center">{it.title}</h3>
+              <p className="text-gray-600 text-center">{it.desc}</p>
             </div>
           ))}
         </div>
