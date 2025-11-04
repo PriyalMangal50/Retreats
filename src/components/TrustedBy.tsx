@@ -9,77 +9,103 @@ export default function TrustedBy() {
   const logos = [logo1, logo2, logo3, logo4, logo5, logo6];
 
   return (
-    <section className="py-8 bg-white -mt-1">
-      <div className="max-w-7xl mx-auto px-8">
-        <p style={{
-          fontFamily: 'Archivo, sans-serif',
-          fontWeight: 500,
-          fontStyle: 'normal',
-          fontSize: '20px',
-          lineHeight: '24px',
-          letterSpacing: '-4%',
-          textAlign: 'center',
-          marginBottom: '4px',
-          textTransform: 'none',
-          color: '#374151'
-        }}>
-        </p>
+    <section className="py-8 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-center mb-8">
+          <span
+            style={{
+              fontFamily: 'Cormorant Infant',
+              fontWeight: 500,
+              fontStyle: 'Italic',
+              fontSize: '24px',
+              lineHeight: '24px',
+              letterSpacing: '-4%',
+              textAlign: 'center',
+              marginLeft: '4px',
+              color: '#808D89',
+            }}
+          >
+            Loved
+          </span>
+          <span
+            style={{
+              fontFamily: 'Archivo',
+              fontWeight: 500,
+              fontStyle: 'Medium',
+              fontSize: '20px',
+              lineHeight: '24px',
+              letterSpacing: '-4%',
+              textAlign: 'center',
+              marginLeft: '4px',
+              color: '#808D89',
+            }}
+          >
+            by
+          </span>
+          <span
+            style={{
+              fontFamily: 'Cormorant Infant',
+              fontWeight: 500,
+              fontStyle: 'Italic',
+              fontSize: '24px',
+              lineHeight: '24px',
+              letterSpacing: '-4%',
+              textAlign: 'center',
+              marginLeft: '4px',
+              color: '#808D89',
+            }}
+          >
+            Leading
+          </span>
+          <span
+            style={{
+              fontFamily: 'Archivo',
+              fontWeight: 500,
+              fontStyle: 'Medium',
+              fontSize: '20px',
+              lineHeight: '24px',
+              letterSpacing: '-4%',
+              textAlign: 'center',
+              marginLeft: '4px',
+              color: '#808D89',
+            }}
+          >
+            Organizations
+          </span>
+        </h2>
 
-        <h3 style={{
-          fontFamily: 'Cormorant Infant, serif',
-          fontWeight: 500,
-          fontStyle: 'italic',
-          fontSize: '24px',
-          lineHeight: '24px',
-          letterSpacing: '-4%',
-          textAlign: 'center',
-          marginBottom: '12px',
-          color: '#111827'
-        }}>
-          Loved by Leading Organizations
-        </h3>
-
-        <div className="overflow-hidden">
-          <div className="marquee" style={{ position: 'relative', marginTop: '18px' }}>
-            <div
-              className="marquee-track"
-              style={{
-                display: 'flex',
-                gap: '32px',
-                alignItems: 'center'
-              }}
-            >
-              {logos.concat(logos).map((src, i) => (
-                <div
-                  key={i}
-                  className="logo-item"
-                  style={{
-                    width: '160px',
-                    height: '64px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    opacity: 1,
-                    flex: '0 0 auto'
-                  }}
-                >
-                  <img src={src} alt={`logo-${i}`} style={{ width: '100%', height: '100%', objectFit: 'contain', transition: 'transform 300ms ease' }} />
-                </div>
-              ))}
-            </div>
+        <div className="overflow-hidden relative">
+          <div className="flex gap-8 animate-marquee">
+            {logos.concat(logos).map((logo, index) => (
+              <div
+                key={index}
+                className="w-32 h-16 flex items-center justify-center flex-shrink-0"
+              >
+                <img
+                  src={logo}
+                  alt={`Logo ${index + 1}`}
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
       <style>{`
-        .marquee { overflow: hidden; }
-        .marquee-track { animation: marquee-left 18s linear infinite; display:flex; }
-        .marquee-track > .logo-item { flex: 0 0 auto; }
-        .logo-item img { will-change: transform; }
-        .logo-item:hover img { transform: scale(1.06); }
-        @keyframes marquee-left {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-50%); }
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+
+        .animate-marquee {
+          display: flex;
+          animation: marquee 20s linear infinite;
+          will-change: transform;
         }
       `}</style>
     </section>
