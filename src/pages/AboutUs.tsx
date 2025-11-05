@@ -220,73 +220,29 @@ export default function AboutUs() {
           </p>
 
           {/* Left Image Stack */}
-          <div className="absolute left-0 bottom-0 transform -translate-y-1/4 -translate-x-1/4">
+          <div className="absolute left-0 bottom-0 transform translate-y-[45%] -translate-x-[40%]">
             <div className="relative w-64 h-64">
-              <img src={image21} alt="Image 21" className="absolute w-40 h-40 object-cover rounded-lg transform rotate-6" />
-              <img src={image23} alt="Image 23" className="absolute w-40 h-40 object-cover rounded-lg transform -rotate-6 top-8 left-8" />
+              <img src={image21} alt="Image 21" className="absolute w-48 h-48 object-cover rounded-lg transform rotate-6" />
+              <img src={image23} alt="Image 23" className="absolute w-40 h-40 object-cover rounded-lg transform -rotate-6 top-[-60px] left-8" />
               <img src={image24} alt="Image 24" className="absolute w-40 h-40 object-cover rounded-lg transform rotate-3 top-16 left-16" />
-              <img src={team1} alt="Team 1" className="absolute w-40 h-40 object-cover rounded-lg transform -rotate-3 top-24 left-24" />
+              <img src={team1} alt="Team 1" className="absolute w-48 h-48 object-cover rounded-lg transform -rotate-3 top-24 left-24" />
             </div>
           </div>
 
           {/* Right Image Stack */}
-          <div className="absolute right-0 bottom-0 transform -translate-y-1/4 translate-x-1/4">
+          <div className="absolute right-0 bottom-0 transform translate-y-[45%] translate-x-[40%]">
             <div className="relative w-64 h-64">
-              <img src={image31} alt="Image 31" className="absolute w-40 h-40 object-cover rounded-lg transform -rotate-6" />
-              <img src={program23} alt="Program 23" className="absolute w-40 h-40 object-cover rounded-lg transform rotate-6 top-8 right-8" />
+              <img src={image31} alt="Image 31" className="absolute w-48 h-48 object-cover rounded-lg transform -rotate-6" />
+              <img src={program23} alt="Program 23" className="absolute w-40 h-40 object-cover rounded-lg transform rotate-6 top-[-60px] right-8" />
               <img src={program24} alt="Program 24" className="absolute w-40 h-40 object-cover rounded-lg transform -rotate-3 top-16 right-16" />
-              <img src={image24} alt="Image 24" className="absolute w-40 h-40 object-cover rounded-lg transform rotate-3 top-24 right-24" />
+              <img src={image24} alt="Image 24" className="absolute w-48 h-48 object-cover rounded-lg transform rotate-3 top-24 right-24" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Duplicate of 'Who We Are' section but using image23.png as the background */}
-      <section className="w-full">
-        <div className="relative w-full">
-          <img src={image23} alt="image23 background" className="w-full h-auto object-contain block" />
-
-          {/* Our Mission overlay (responsive: shifts down/right on md+) */}
-          <div className="absolute top-8 left-4 md:top-14 md:left-16 lg:top-20 lg:left-20">
-            <div className="max-w-xs md:max-w-xl text-left">
-              <h3 className="bg-gradient-to-r from-teal-400 via-cyan-500 to-purple-500 bg-clip-text text-transparent text-2xl md:text-[42px] italic" style={{ fontFamily: 'Cormorant, serif', fontWeight: 700, lineHeight: '42px', letterSpacing: '-5%', textAlign: 'center' }}>
-                Our Mission ——
-              </h3>
-
-              <div className="mt-3 md:mt-4 text-black">
-                <p className="text-sm md:text-base leading-6 md:leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400 }}>
-                  To craft soulful retreats that blend ancient wisdom + modern science, deliver heartfelt experiences, and ignite transformation — for people and teams alike.
-                </p>
-
-
-                <p className="mt-3 text-sm md:text-base leading-6 md:leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400 }}>
-                  To be a trusted partner in the journey toward well-being, purpose, and conscious living.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Our Vision overlay (responsive: shifts up/left on md+) */}
-          <div className="absolute bottom-8 right-4 md:bottom-14 md:right-12 lg:bottom-20 lg:right-20">
-            <div className="max-w-xs md:max-w-xl text-left">
-              <h3 className="bg-gradient-to-r from-teal-400 via-cyan-500 to-purple-500 bg-clip-text text-transparent text-2xl md:text-[42px] italic" style={{ fontFamily: 'Cormorant, serif', fontWeight: 700, lineHeight: '42px', letterSpacing: '-5%', textAlign: 'left' }}>
-                Our Vision ——
-              </h3>
-
-              <div className="mt-3 md:mt-4 text-black">
-                <p className="text-sm md:text-base leading-6 md:leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400, textAlign: 'left' }}>
-                  To craft soulful retreats that blend ancient wisdom + modern science, deliver heartfelt experiences, and ignite transformation — for people and teams alike.
-                </p>
-
-                <p className="mt-3 text-sm md:text-base leading-6 md:leading-7" style={{ fontFamily: 'Archivo, serif', fontWeight: 400, textAlign: 'left' }}>
-                  To be a trusted partner in the journey toward well-being, purpose, and conscious living.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      
       {/* "How it Started" section using program24.png */}
       <section className="w-full">
         <div className="relative w-full">
