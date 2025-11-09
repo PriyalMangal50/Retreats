@@ -3,6 +3,7 @@ import logoB from "../assets/images/c134a71f95fd3d1af893e2da28fa7b4de520f131 (2)
 import { ChevronDown, UserCircle2, LogOut, Settings } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
+import { deleteTokenOnLogout } from "../lib/firebase";
 import { useAuth } from "../store/auth";
 
 export default function Navbar() {
@@ -283,8 +284,14 @@ export default function Navbar() {
                   )}
 
                   <button
-                    onClick={() => {
+                    onClick={async () => {
                       setMenuOpen(false);
+                      const { token } = useAuth.getState();
+                      try {
+                        if (token) await deleteTokenOnLogout(token);
+                      } catch (e) {
+                        console.warn("Failed to delete FCM token on logout", e);
+                      }
                       clearAuth();
                       navigate("/", { replace: true });
                     }}
@@ -420,9 +427,15 @@ export default function Navbar() {
                   </Link>
                 )}
                 <button
-                  onClick={() => {
-                    clearAuth();
+                  onClick={async () => {
                     setMobileOpen(false);
+                    const { token } = useAuth.getState();
+                    try {
+                      if (token) await deleteTokenOnLogout(token);
+                    } catch (e) {
+                      console.warn("Failed to delete FCM token on logout", e);
+                    }
+                    clearAuth();
                     navigate("/", { replace: true });
                   }}
                   className="text-red-600 font-medium text-left"

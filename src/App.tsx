@@ -30,6 +30,11 @@ import RouteChangeTracker from "./components/RouteChangeTracker";
 import AdminRoute from "./components/AdminRoute";
 import VerifyEmail from "./pages/VerifyEmail";
 import Profile from "./pages/Profile";
+import { useEffect } from "react";
+import { initMessaging, requestAndSyncFcmToken } from "./lib/firebase";
+import { Toaster, toast } from "react-hot-toast";
+import { useAuth } from "./store/auth";
+import { useNavigate } from "react-router-dom";
 
 function HomePage() {
   return (
@@ -52,9 +57,57 @@ function HomePage() {
 }
 
 function App() {
+  const { token } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!token) return;
+    (async () => {
+      await initMessaging();
+      const res = await requestAndSyncFcmToken(token);
+      console.log("FCM init result:", res);
+    })();
+  }, [token]);
+
+  useEffect(() => {
+    function onNotify(e: Event) {
+      const payload = (e as CustomEvent).detail;
+      const title = payload?.notification?.title ?? "Notification";
+      const body = payload?.notification?.body ?? "";
+      const path = payload?.data?.path || "/";
+
+      toast(
+        (t) => (
+          <div
+            onClick={() => {
+              toast.dismiss(t.id);
+              navigate(path);
+            }}
+            className="cursor-pointer"
+          >
+            <div className="font-semibold">{title}</div>
+            <div className="text-sm opacity-80">{body}</div>
+            <div className="text-xs text-blue-600 mt-1">View</div>
+          </div>
+        ),
+        { duration: 6000 }
+      );
+    }
+    window.addEventListener(
+      "dashboard-notification",
+      onNotify as EventListener
+    );
+    return () =>
+      window.removeEventListener(
+        "dashboard-notification",
+        onNotify as EventListener
+      );
+  }, [navigate]);
+
   return (
     <>
       <RouteChangeTracker />
+      <Toaster position="top-right" />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/wellness-retreats" element={<WellnessRetreats />} />
