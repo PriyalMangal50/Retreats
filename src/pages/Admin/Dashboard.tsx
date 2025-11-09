@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useAuth } from "../../store/auth";
 
 const Dashboard = () => {
