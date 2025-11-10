@@ -26,7 +26,10 @@ import Signup from "./pages/Signup";
 import { Routes, Route } from "react-router-dom";
 import AdminLogin from "./pages/Admin/Login";
 import Dashboard from "./pages/Admin/Dashboard";
+<<<<<<< HEAD
 import PackageView from "./pages/Admin/PackageView";
+=======
+>>>>>>> 454d4ad61c136db059f89f9d14ecc67fa4f4fe0b
 import RouteChangeTracker from "./components/RouteChangeTracker";
 import AdminRoute from "./components/AdminRoute";
 import VerifyEmail from "./pages/VerifyEmail";
@@ -77,7 +80,10 @@ function App() {
 
         <Route element={<AdminRoute />}>
           <Route path="/admin/dashboard" element={<Dashboard />} />
+<<<<<<< HEAD
           <Route path="/admin/packages/:id" element={<PackageView />} />
+=======
+>>>>>>> 454d4ad61c136db059f89f9d14ecc67fa4f4fe0b
         </Route>
         <Route path="/admin/login" element={<AdminLogin />} />
         {/* fallback to home for unknown routes */}

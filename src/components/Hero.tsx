@@ -92,4 +92,8 @@ export default function Hero({
       </svg>
     </section>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 454d4ad61c136db059f89f9d14ecc67fa4f4fe0b

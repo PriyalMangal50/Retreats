@@ -7,6 +7,7 @@ export function useLogin() {
   const qc = useQueryClient();
 
   return useMutation({
+<<<<<<< HEAD
     // If the credentials match the local admin fallback, skip the API and create an admin session locally.
     mutationFn: async (input: { email: string; password: string }) => {
       const ADMIN_EMAIL = 'retreatsbytraveon@gmail.com';
@@ -26,6 +27,9 @@ export function useLogin() {
 
       return loginApi(input);
     },
+=======
+    mutationFn: loginApi,
+>>>>>>> 454d4ad61c136db059f89f9d14ecc67fa4f4fe0b
     onSuccess: (res) => {
       const token = res?.data?.token;
       const user = res?.data?.user;

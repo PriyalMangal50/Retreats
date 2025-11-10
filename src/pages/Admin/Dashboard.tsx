@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Navbar from "../../components/Navbar";
 import { useAuth } from "../../store/auth";
 import { useNavigate } from "react-router-dom";
@@ -447,6 +448,18 @@ const Dashboard = () => {
         </main>
       </div>
       <Footer />
+=======
+import { useAuth } from "../../store/auth";
+
+const Dashboard = () => {
+  const { user, clearAuth } = useAuth();
+  
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      <p>{user?.emailAddress}</p>
+      <button onClick={clearAuth}>Logout</button>
+>>>>>>> 454d4ad61c136db059f89f9d14ecc67fa4f4fe0b
     </div>
   );
 };

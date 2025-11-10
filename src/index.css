@@ -5,8 +5,11 @@
 @layer base {
 	html, body, #root {
 		font-family: 'Lato', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+<<<<<<< HEAD
 		/* Prevent horizontal page scroll caused by overflowing elements (marquees, wide svgs, etc.) */
 		overflow-x: hidden;
+=======
+>>>>>>> 454d4ad61c136db059f89f9d14ecc67fa4f4fe0b
 	}
 }
 

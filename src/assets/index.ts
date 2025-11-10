@@ -1,5 +1,9 @@
 import logo from './images/c134a71f95fd3d1af893e2da28fa7b4de520f131 (2).png';
+<<<<<<< HEAD
 import heroBg from './images/hero_bg.gif';
+=======
+import heroBg from './images/ad2ed0381e9bbdcf96c8cea8155a410264e343aa.gif';
+>>>>>>> 454d4ad61c136db059f89f9d14ecc67fa4f4fe0b
 
 import program1 from './images/a6236e678c06b1ab1ec270fac36a4afa422ff0cf.png';
 import program2 from './images/dad235f9fad3c862e7fd8d3fdabdc38f16803678.png';

@@ -7,6 +7,7 @@ export default function Testimonials() {
     { img: images.testimonials[2], name: "Rahul Mehta", title: "Travel Blogger, Wanderlust Weekly", text: "The community tour through Oman opened our eyes to authentic Arabia. Every interaction felt genuine, and the local connections we made were priceless." },
     { img: images.testimonials[3], name: "Asha Rao", title: "Wellness Coach", text: "Truly transformative experience. I left refreshed and inspired. The balance between activity and mindfulness was perfect." },
     { img: images.testimonials[4], name: "Leena Das", title: "Therapist", text: "Carefully curated activities that supported real healing. I felt completely renewed after the retreat." },
+<<<<<<< HEAD
     // { img: images.testimonials[5], name: "Arjun Singh", title: "Photographer", text: "Beautiful locations and great people — highly recommended." },
     // { img: images.testimonials[6], name: "Maya Kapoor", title: "Traveler", text: "A soulful journey, with exceptional organization and warmth." },
     // { img: images.testimonials[7], name: "Rohan Mehta", title: "Team Lead", text: "Our team found new synergy and focus during the retreat." },
@@ -15,6 +16,13 @@ export default function Testimonials() {
   
   ];
   
+=======
+    { img: images.testimonials[5], name: "Arjun Singh", title: "Photographer", text: "Beautiful locations and great people — highly recommended." },
+    { img: images.testimonials[6], name: "Maya Kapoor", title: "Traveler", text: "A soulful journey, with exceptional organization and warmth." },
+    { img: images.testimonials[7], name: "Rohan Mehta", title: "Team Lead", text: "Our team found new synergy and focus during the retreat." },
+    { img: images.testimonials[8], name: "Leena Das", title: "Therapist", text: "Carefully curated activities that supported real healing. I felt completely renewed after the retreat." }
+  ];
+>>>>>>> 454d4ad61c136db059f89f9d14ecc67fa4f4fe0b
 
   // Duplicate once for seamless loop
   const loopCards = [...cards, ...cards];

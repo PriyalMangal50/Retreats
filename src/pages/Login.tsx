@@ -24,9 +24,19 @@ export default function Login() {
     login.mutate(
       { email, password },
       {
+<<<<<<< HEAD
         onSuccess: () => {
           // Do not auto-redirect admin users to the dashboard.
           // After login, show the profile icon in the navbar; the admin can open the dashboard from there.
+=======
+        onSuccess: (res) => {
+          const loggedInUser = res?.data?.user;
+          const isAdmin = loggedInUser?.userType === "Admin";
+          if (isAdmin) {
+            navigate("/admin/dashboard", { replace: true });
+            return;
+          }
+>>>>>>> 454d4ad61c136db059f89f9d14ecc67fa4f4fe0b
           const last = getLastRoute();
           navigate(last || "/", { replace: true });
         },

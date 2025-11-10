@@ -25,6 +25,7 @@ export const useAuth = create<AuthState>()(
         set({ user: { ...current, ...partial } });
       },
     }),
+<<<<<<< HEAD
     {
       name: 'auth', // localStorage key
       // persist only user and token to avoid stale boolean flags hiding UI
@@ -36,5 +37,8 @@ export const useAuth = create<AuthState>()(
         return Promise.resolve({ user: persistedState.user ?? null, token: persistedState.token ?? null });
       },
     }
+=======
+    { name: 'auth' } // localStorage key
+>>>>>>> 454d4ad61c136db059f89f9d14ecc67fa4f4fe0b
   )
 );
